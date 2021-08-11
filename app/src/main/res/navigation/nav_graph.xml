@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startGameFragment3">
+    <fragment
+        android:id="@+id/startGameFragment3"
+        android:name="com.example.navigation.StartGameFragment"
+        android:label="fragment_start_game"
+        tools:layout="@layout/fragment_start_game" >
+        <action
+            android:id="@+id/action_startGameFragment3_to_gameFragment2"
+            app:destination="@id/gameFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment2"
+        android:name="com.example.navigation.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment2_to_endGameFragment3"
+            app:destination="@id/endGameFragment3"
+            app:popUpTo="@id/startGameFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/endGameFragment3"
+        android:name="com.example.navigation.EndGameFragment"
+        android:label="fragment_end_game"
+        tools:layout="@layout/fragment_end_game" >
+        <action
+            android:id="@+id/action_endGameFragment3_to_startGameFragment3"
+            app:destination="@id/startGameFragment3" />
+    </fragment>
+</navigation>
